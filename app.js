@@ -11,7 +11,7 @@ const initials = sortedNames.map(function(name) {
     const firstNameInitial = nameParts[0][0];
     const middleNameInitial = nameParts[1][0];
     const lastNameInitial = nameParts[2][0];
-    return `${firstNameInitial}.${middleNameInitial}.${lastNameInitial}.`;
+    return `${firstNameInitial.toUpperCase}.${middleNameInitial.toUpperCase}.${lastNameInitial.toUpperCase}.`;
   });
 
 console.log(initials);
