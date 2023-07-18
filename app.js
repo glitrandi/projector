@@ -6,13 +6,14 @@ var sortedNames = userNames.filter(function(name) {if (typeof name === "string")
   return true;
 } return false;}).sort();
 
-const initials = sortedNames.map(function(name) {
-    const nameParts = name.split(' ');
-    const firstNameInitial = nameParts[0][0];
-    const middleNameInitial = nameParts[1][0];
-    const lastNameInitial = nameParts[2][0];
-    return `${firstNameInitial.toUpperCase()}.${middleNameInitial.toUpperCase()}.${lastNameInitial.toUpperCase()}.`;
-  });
+function getInitials(userName) {
+  const nameParts = userName.split(' ');
+  const parts = nameParts.map(function(part) { 
+ return part.charAt(0).toUpperCase();}).join('.');
+ return parts; 
+  };
+
+const initials = sortedNames.map(getInitials);
 
 console.log(initials);
 
